@@ -45,7 +45,10 @@ const Weather = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") searchCity(city);
+              if (e.key === "Enter") {
+                searchCity(city)
+                setCity("");
+              }
             }}
             type="text"
             placeholder="Search city"
