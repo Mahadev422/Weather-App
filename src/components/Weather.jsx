@@ -9,7 +9,9 @@ const Weather = () => {
   const [city, setCity] = useState("");
   const searchCity = async (city) => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${'09f2df1d2af00b8bd689d697a133bef9'}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }`;
 
       const response = await fetch(url);
 
