@@ -8,8 +8,11 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState(false);
   const [city, setCity] = useState("");
   const searchCity = async (city) => {
+    if (city.trim() === "") {
+      return alert("Please enter a valid city name.");
+    }
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${'09f2df1d2af00b8bd689d697a133bef9'}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${"09f2df1d2af00b8bd689d697a133bef9"}`;
 
       const response = await fetch(url);
 
@@ -44,7 +47,7 @@ const Weather = () => {
             onChange={(e) => setCity(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                searchCity(city)
+                searchCity(city);
                 setCity("");
               }
             }}
@@ -57,8 +60,7 @@ const Weather = () => {
               searchCity(city);
               setCity("");
             }}
-            className="ml-2 p-2 rounded-full bg-blue-200 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-200"
-            disabled={city === ""}
+            className="ml-2 p-2 rounded-full bg-blue-200 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all cursor-pointer duration-200"
           >
             <IoSearch className="text-blue-700 text-2xl" />
           </button>
