@@ -17,7 +17,7 @@ A modern Weather App built with **React**, **Vite**, **TailwindCSS**, and **reac
 - [Vite](https://vitejs.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [react-icons](https://react-icons.github.io/react-icons/)
-- [Weather API](https://openweathermap.org/api) (or the API you chose)
+- [Weather API](https://openweathermap.org/api)
 
 ## Getting Started
 
@@ -70,7 +70,6 @@ weather-app/
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── ...
-├── tailwind.config.js
 ├── vite.config.js
 ├── package.json
 └── README.md
